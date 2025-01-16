@@ -8,56 +8,103 @@
     <script src="/JAVA/cardapio.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>Cardápio do Restaurante</h1>
-    </header>
+    <!-- Tela de login -->
+    <div id="login" class="login-container" style="display: block;">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <label for="username">Usuário:</label>
+            <input type="text" id="username" required>
+            <label for="password">Senha:</label>
+            <input type="password" id="password" required>
+            <button type="submit">Entrar</button>
+        </form>
+        <p id="loginError" class="error" style="display: none; color: red;">Usuário ou senha inválidos.</p>
+    </div>
 
-    <main>
-        <section id="entradas">
-            <h2>Entradas</h2>
-            <ul>
-                <li>
-                    <div class="item">
-                        <h3>Salada Caprese</h3>
-                        <p>Descrição: Tomates frescos, mussarela de búfala e manjericão.</p>
-                        <span class="preco">R$ 25,00</span>
-                    </div>
-                </li>
-                <!-- Outros itens -->
-            </ul>
-        </section>
+    <!-- Conteúdo principal do site -->
+    <div id="conteudo" style="display: none;">
+        <header>
+            <h1>Cardápio do Restaurante</h1>
+        </header>
 
-        <section id="pratos-principais">
-            <h2>Pratos Principais</h2>
-            <ul>
-                <li>
-                    <div class="item">
-                        <h3>Filé ao molho madeira</h3>
-                        <p>Descrição: Filé mignon servido com arroz e batatas.</p>
-                        <span class="preco">R$ 55,00</span>
-                    </div>
-                </li>
-                <!-- Outros itens -->
-            </ul>
-        </section>
+        <main>
+            <section id="entradas">
+                <h2>Entradas</h2>
+                <ul></ul>
+            </section>
 
-        <section id="sobremesas">
-            <h2>Sobremesas</h2>
-            <ul>
-                <li>
-                    <div class="item">
-                        <h3>Pudim de Leite</h3>
-                        <p>Descrição: Clássico pudim de leite condensado.</p>
-                        <span class="preco">R$ 15,00</span>
-                    </div>
-                </li>
-                <!-- Outros itens -->
-            </ul>
-        </section>
-    </main>
+            <section id="pratos-principais">
+                <h2>Pratos Principais</h2>
+                <ul></ul>
+            </section>
 
-    <footer>
-        <p>© 2025 Restaurante Exemplo. Todos os direitos reservados.</p>
-    </footer>
+            <section id="sobremesas">
+                <h2>Sobremesas</h2>
+                <ul></ul>
+            </section>
+
+            <!-- Botão para baixar relatório -->
+            <button id="baixarRelatorio">Baixar Relatório do Cardápio</button>
+        </main>
+
+        <footer>
+            <p>© 2025 Restaurante Exemplo. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Login e controle de acesso
+        document.getElementById("loginForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            if (username === "admin" && password === "1234") {
+                alert("Bem-vindo, ADMIN!");
+                document.getElementById("login").style.display = "none";
+                document.getElementById("conteudo").style.display = "block";
+            } else if (username === "funcionario" && password === "1234") {
+                alert("Bem-vindo, Funcionário!");
+                document.getElementById("login").style.display = "none";
+                document.getElementById("conteudo").style.display = "block";
+            } else {
+                document.getElementById("loginError").style.display = "block";
+            }
+        });
+
+        // Estrutura de dados e geração dinâmica do cardápio
+        const cardapio = [
+            { categoria: "entradas", nome: "Salada Caprese", descricao: "Tomates frescos, mussarela de búla e manjericão.", preco: 25.0 },
+            { categoria: "pratos-principais", nome: "Filé ao molho madeira", descricao: "Filé mignon servido com arroz e batatas.", preco: 55.0 },
+            { categoria: "sobremesas", nome: "Pudim de Leite", descricao: "Clássico pudim de leite condensado.", preco: 15.0 }
+        ];
+
+        document.addEventListener("DOMContentLoaded", () => {
+            cardapio.forEach(item => {
+                const section = document.getElementById(item.categoria);
+                if (section) {
+                    section.querySelector("ul").innerHTML += `
+                        <li>
+                            <div class="item">
+                                <h3>${item.nome}</h3>
+                                <p>${item.descricao}</p>
+                                <span class="preco">R$ ${item.preco.toFixed(2)}</span>
+                            </div>
+                        </li>`;
+                }
+            });
+        });
+
+        // Geração de relatório JSON
+        document.getElementById("baixarRelatorio").addEventListener("click", () => {
+            const blob = new Blob([JSON.stringify(cardapio, null, 2)], { type: "application/json" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "relatorio-cardapio.json";
+            a.click();
+            URL.revokeObjectURL(url);
+        });
+    </script>
 </body>
 </html>
