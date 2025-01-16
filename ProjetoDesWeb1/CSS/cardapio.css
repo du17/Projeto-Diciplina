@@ -44,6 +44,11 @@ li {
 
 .item {
     padding: 15px;
+    transition: background-color 0.3s;
+}
+
+.item:hover {
+    background-color: #fff3e0; /* Cor de destaque ao passar o mouse */
 }
 
 h3 {
@@ -69,4 +74,56 @@ footer {
     text-align: center;
     padding: 10px 0;
     margin-top: 20px;
+}
+
+/* Estilos para a tela de login */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.login-container h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.login-container form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+}
+
+.login-container input {
+    width: calc(100% - 10px);
+    margin: 10px 0;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login-container button {
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-container button:hover {
+    background-color: #e68a00;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
 }
