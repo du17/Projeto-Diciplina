@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="CSS/cardapio.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Cardápio Online</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#entradas">Entradas</a></li>
+            <li><a href="#pratos-principais">Pratos Principais</a></li>
+            <li><a href="#sobremesas">Sobremesas</a></li>
+            <li><a href="#carrinho">Carrinho</a></li>
+            <li><a href="index.html">Sair</a></li>
+        </ul>
+    </nav>
+
+    <section id="cardapio">
+        <h2>Nosso Cardápio</h2>
+
+        <!-- Categorias do cardápio -->
+        <div id="entradas">
+            <h2>Entradas</h2>
+            <!-- Entradas serão carregadas aqui -->
+        </div>
+
+        <div id="pratos-principais">
+            <h2>Pratos Principais</h2>
+            <!-- Pratos principais serão carregados aqui -->
+        </div>
+
+        <div id="sobremesas">
+            <h2>Sobremesas</h2>
+            <!-- Sobremesas serão carregadas aqui -->
+        </div>
+        
+        
+    </section>
+
+    <section id="carrinho">
+        <h2>Carrinho</h2>
+        <div id="carrinho-lista">
+            <!-- Itens do carrinho serão exibidos aqui -->
+        </div>
+        <button id="carrinho-esvaziar" class="btn btn-warning esvaziar" style="display:none;">Esvaziar Carrinho</button>
+        <button id="finalizar-compra" class="btn btn-primary">Finalizar Compra</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Cardápio Online Restaurante</p>
+    </footer>
+
+    <script src="js/cardapio.js"></script>
+</body>
+</html>

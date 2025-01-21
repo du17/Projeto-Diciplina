@@ -1,0 +1,66 @@
+{
+  "itens": [
+    {
+      "nome": "Salada Caprese",
+      "descricao": "Tomate, mussarela de búfala, manjericão e azeite.",
+      "preco": 22.00,
+      "categoria": "Entrada"
+    },
+    {
+      "nome": "Carpaccio",
+      "descricao": "Carne de filé mignon crua, molho de mostarda e alcaparras.",
+      "preco": 35.00,
+      "categoria": "Entrada"
+    },
+    {
+      "nome": "Risoto de Frutos do Mar",
+      "descricao": "Arroz arbóreo, camarões, lula e molho de frutos do mar.",
+      "preco": 49.00,
+      "categoria": "Prato Principal"
+    },
+    {
+      "nome": "Lasagna de Carne",
+      "descricao": "Camadas de massa, molho bolonhesa e queijo gratinado.",
+      "preco": 40.00,
+      "categoria": "Prato Principal"
+    },
+    {
+      "nome": "Pizza Quattro Queijos",
+      "descricao": "Queijo mozarela, gorgonzola, parmesão e queijo de cabra.",
+      "preco": 42.00,
+      "categoria": "Prato Principal"
+    },
+    {
+      "nome": "Pizza Margherita",
+      "descricao": "Molho de tomate, queijo mozarela, manjericão fresco e azeite.",
+      "preco": 35.00,
+      "categoria": "Prato Principal"
+    },
+    {
+      "nome": "Espaguete à Carbonara",
+      "descricao": "Massa de espaguete com molho cremoso de ovos, queijo e bacon.",
+      "preco": 38.00,
+      "categoria": "Prato Principal"
+    },
+    {
+      "nome": "Tiramisu",
+      "descricao": "Sobremesa italiana feita com biscoitos champagne, café e creme mascarpone.",
+      "preco": 18.00,
+      "categoria": "Sobremesa"
+    },
+    {
+      "nome": "Gelato de Pistache",
+      "descricao": "Sorvete italiano de pistache natural.",
+      "preco": 16.00,
+      "categoria": "Sobremesa"
+    },
+    {
+      "nome": "Vinho Tinto",
+      "descricao": "Vinho tinto italiano, harmoniza bem com massas e carnes.",
+      "preco": 55.00,
+      "categoria": "Sobremesa"
+    }
+  ]
+}
+
+
